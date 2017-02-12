@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TeaOrCoffee</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_tea">Tea</string>
+    <string name="button_coffee">Coffee</string>
+    <string name="button_milk">Milk</string>
+    <string name="button_noMilk">No Milk</string>
+    <string name="button_noSugar">No Sugar</string>
+    <string name="button_oneSugar">One Sugar</string>
+    <string name="button_twoSugar">Two Sugar</string>
+</resources>
