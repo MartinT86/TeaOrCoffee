@@ -17,7 +17,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public DrinkChoice _drinkChoice;
-    public String _drinkMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,38 +40,42 @@ public class MainActivity extends AppCompatActivity {
 
     public void setTea(View view) {
         _drinkChoice.Type = "Tea";
-        AddToMessage(_drinkChoice.Type);
         DisplayCurrentDrink();
-    }
-
-    private void AddToMessage(String stringToAdd) {
-        if (_drinkMessage == null)
-            _drinkMessage = stringToAdd;
-        else
-        _drinkMessage += stringToAdd;
     }
 
     public void setCoffee(View view) {
         _drinkChoice.Type = "Coffee";
-        AddToMessage(_drinkChoice.Type);
         DisplayCurrentDrink();
     }
 
     public void setMilk(View view) {
         _drinkChoice.Milk = true;
-        AddToMessage(" with milk");
         DisplayCurrentDrink();
     }
 
     public void setNoMilk(View view) {
         _drinkChoice.Milk = false;
-        AddToMessage(" with no milk");
         DisplayCurrentDrink();
     }
 
     private void DisplayCurrentDrink() {
         TextView textView = (TextView) findViewById(R.id.current_drink_message);
-        textView.setText(_drinkMessage);
+        textView.setText(_drinkChoice.Message());
+    }
+
+    public void setNoSugar(View view){
+        _drinkChoice.Sugars = 0;
+        DisplayCurrentDrink();
+    }
+
+    public void setOneSugar(View view){
+        _drinkChoice.Sugars = 1;
+        DisplayCurrentDrink();
+    }
+
+    public void setTwoSugar(View view){
+        _drinkChoice.Sugars = 2;
+        DisplayCurrentDrink();
     }
 
     @Override

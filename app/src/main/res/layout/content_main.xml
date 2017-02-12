@@ -55,19 +55,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_noSugar"
-            android:onClick="sendMessage" />
+            android:onClick="setNoSugar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_oneSugar"
-            android:onClick="sendMessage" />
+            android:onClick="setOneSugar" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_twoSugar"
-            android:onClick="sendMessage" />
+            android:onClick="setTwoSugar" />
     </LinearLayout>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
