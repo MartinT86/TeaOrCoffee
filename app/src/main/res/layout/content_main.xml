@@ -80,6 +80,22 @@
             android:layout_height="wrap_content"
             android:id="@+id/current_drink_message" />
     </RelativeLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_addCurrentDrink"
+            android:onClick="addCurrentDrink" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/drink_count_message" />
+    </LinearLayout>
 </LinearLayout>
 
     <!--

@@ -14,9 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     public DrinkChoice _drinkChoice;
+    public List<DrinkChoice> _drinks = new ArrayList<DrinkChoice>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
     public void setTwoSugar(View view){
         _drinkChoice.Sugars = 2;
         DisplayCurrentDrink();
+    }
+
+    public void addCurrentDrink(View view){
+        if(_drinkChoice.Type != null && _drinkChoice.Sugars != null && _drinkChoice.Milk != null) {
+            _drinks.add(_drinkChoice);
+            TextView textView = (TextView) findViewById(R.id.drink_count_message);
+            textView.setText(_drinks.size() + " drinks");
+        }
     }
 
     @Override
