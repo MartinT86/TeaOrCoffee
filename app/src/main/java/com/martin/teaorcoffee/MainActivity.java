@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public DrinkChoice _drinkChoice;
     public List<DrinkChoice> _drinks = new ArrayList<DrinkChoice>();
+    public final static String EXTRA_DRINKS = "TeaOrCoffee.DRINKS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +89,16 @@ public class MainActivity extends AppCompatActivity {
             _drinks.add(_drinkChoice);
             TextView textView = (TextView) findViewById(R.id.drink_count_message);
             textView.setText(_drinks.size() + " drinks");
+            _drinkChoice = new DrinkChoice();
+            DisplayCurrentDrink();
         }
+    }
+
+    public void viewDrinks(View view){
+        Intent intent = new Intent(this, ViewDrinksActivity.class);
+        Bundle bundle = new Bundle();
+        //bundle.putParcelable(EXTRA_DRINKS, _drinks);
+        startActivity(intent);
     }
 
     @Override
