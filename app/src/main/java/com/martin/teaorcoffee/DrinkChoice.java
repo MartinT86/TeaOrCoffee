@@ -1,15 +1,21 @@
 package com.martin.teaorcoffee;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 /**
  * Created by martin on 12/02/17.
  */
 
-public class DrinkChoice {
+public class DrinkChoice implements Parcelable {
     public String Type;
     public Boolean Milk;
     public Integer Sugars;
+
+    public DrinkChoice(){
+
+    }
 
     public String Message(){
         String message = "";
@@ -54,4 +60,32 @@ public class DrinkChoice {
         }
         return message;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(Type);
+        parcel.writeByte((byte) (Milk ? 1 : 0));
+        parcel.writeInt(Sugars);
+    }
+
+    public DrinkChoice(Parcel parcel){
+        Type = parcel.readString();
+        Milk = parcel.readByte() != 0;
+        Sugars = parcel.readInt();
+    }
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public DrinkChoice createFromParcel(Parcel in) {
+            return new DrinkChoice(in);
+        }
+
+        public DrinkChoice[] newArray(int size) {
+            return new DrinkChoice[size];
+        }
+    };
 }

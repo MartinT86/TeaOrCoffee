@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public DrinkChoice _drinkChoice;
-    public List<DrinkChoice> _drinks = new ArrayList<DrinkChoice>();
+    public ArrayList<DrinkChoice> _drinks = new ArrayList<DrinkChoice>();
     public final static String EXTRA_DRINKS = "TeaOrCoffee.DRINKS";
 
     @Override
@@ -96,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewDrinks(View view){
         Intent intent = new Intent(this, ViewDrinksActivity.class);
-        Bundle bundle = new Bundle();
-        //bundle.putParcelable(EXTRA_DRINKS, _drinks);
+        intent.putParcelableArrayListExtra(EXTRA_DRINKS, _drinks);
         startActivity(intent);
     }
 
