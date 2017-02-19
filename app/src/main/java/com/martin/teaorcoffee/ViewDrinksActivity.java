@@ -3,6 +3,7 @@ package com.martin.teaorcoffee;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -42,13 +43,14 @@ public class ViewDrinksActivity extends AppCompatActivity {
             linearLayout.setLayoutParams(params);
 
             TextView textView = new TextView(this);
-            textView.setTextSize(10);
+            textView.setTextSize(30);
             textView.setText(drinkChoice.Message());
             LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
             textView.setLayoutParams(textViewParams);
 
             Button button = new Button(this);
             LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            buttonParams.gravity = Gravity.CENTER_VERTICAL;
             button.setLayoutParams(buttonParams);
             button.setText("Remove");
 
