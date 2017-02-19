@@ -10,4 +10,5 @@
     <string name="button_twoSugar">Two Sugar</string>
     <string name="button_addCurrentDrink">Add</string>
     <string name="button_viewDrinks">View Drinks</string>
+    <string name="button_remove">Remove</string>
 </resources>
