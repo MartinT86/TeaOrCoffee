@@ -28,13 +28,21 @@ public class ViewDrinksActivity extends AppCompatActivity {
         DisplayDrinks();
     }
 
-    public void removeDrink(View view){
-        int buttonId = view.getId();
+    View.OnClickListener removeClickListener(final Button button)  {
+        return new View.OnClickListener() {
+            public void onClick(View v) {
+                int buttonId = v.getId();
+                String blah = "asd";
+            }
+        };
     }
+
 
     private void DisplayDrinks() {
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_view_drinks_list);
+
+        int idInt = 1;
 
         for(DrinkChoice drinkChoice : _drinks){
             LinearLayout linearLayout = new LinearLayout(this);
@@ -53,11 +61,15 @@ public class ViewDrinksActivity extends AppCompatActivity {
             buttonParams.gravity = Gravity.CENTER_VERTICAL;
             button.setLayoutParams(buttonParams);
             button.setText("Remove");
+            button.setId(idInt);
+            button.setOnClickListener(removeClickListener(button));
 
             linearLayout.addView(textView);
             linearLayout.addView(button);
 
             layout.addView(linearLayout);
+
+            idInt++;
         }
     }
 }
