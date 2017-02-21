@@ -31,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         _drinkChoice = new DrinkChoice();
         _drinks = new ArrayList<DrinkChoice>();
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 
     public void setTea(View view) {
