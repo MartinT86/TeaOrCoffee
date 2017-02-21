@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public DrinkChoice _drinkChoice;
-    public ArrayList<DrinkChoice> _drinks = new ArrayList<DrinkChoice>();
+    public ArrayList<DrinkChoice> _drinks;
     public final static String EXTRA_DRINKS = "TeaOrCoffee.DRINKS";
 
     @Override
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         _drinkChoice = new DrinkChoice();
+        _drinks = new ArrayList<DrinkChoice>();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ViewDrinksActivity.class);
         intent.putParcelableArrayListExtra(EXTRA_DRINKS, _drinks);
         startActivity(intent);
+
     }
 
     @Override
