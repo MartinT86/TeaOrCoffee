@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,6 +15,10 @@ import java.util.ArrayList;
 public class ViewDrinksActivity extends AppCompatActivity {
 
     private ArrayList<DrinkChoice> _drinks;
+    private int _baseButtonId = 1000;
+    private int _baseRowId = 2000;
+    int _idInt = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,24 +34,30 @@ public class ViewDrinksActivity extends AppCompatActivity {
     View.OnClickListener removeClickListener(final Button button)  {
         return new View.OnClickListener() {
             public void onClick(View v) {
+
                 int buttonId = v.getId();
-                String blah = "asd";
+                String buttonIdString = Integer.toString(buttonId);
+                String layoutIdString = "2" + buttonIdString.substring(1);
+
+                LinearLayout row = (LinearLayout) findViewById(Integer.parseInt(layoutIdString));
+                LinearLayout layout = (LinearLayout) findViewById(R.id.activity_view_drinks_list);
+
+                layout.removeView(row);
             }
         };
     }
 
 
     private void DisplayDrinks() {
-
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_view_drinks_list);
-
-        int idInt = 1;
 
         for(DrinkChoice drinkChoice : _drinks){
             LinearLayout linearLayout = new LinearLayout(this);
             linearLayout.setOrientation(LinearLayout.HORIZONTAL);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
             linearLayout.setLayoutParams(params);
+            String rowIdString = _baseRowId + "" + _idInt;
+            linearLayout.setId(Integer.parseInt(rowIdString));
 
             TextView textView = new TextView(this);
             textView.setTextSize(30);
@@ -61,7 +70,8 @@ public class ViewDrinksActivity extends AppCompatActivity {
             buttonParams.gravity = Gravity.CENTER_VERTICAL;
             button.setLayoutParams(buttonParams);
             button.setText("Remove");
-            button.setId(idInt);
+            String buttonIdString = _baseButtonId + "" + _idInt;
+            button.setId(Integer.parseInt(buttonIdString));
             button.setOnClickListener(removeClickListener(button));
 
             linearLayout.addView(textView);
@@ -69,7 +79,7 @@ public class ViewDrinksActivity extends AppCompatActivity {
 
             layout.addView(linearLayout);
 
-            idInt++;
+            _idInt++;
         }
     }
 }
