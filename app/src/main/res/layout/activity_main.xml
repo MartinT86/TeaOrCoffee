@@ -107,7 +107,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/current_drink_message"
-            android:textSize="25dp"/>
+            android:textSize="25dp"
+            android:text="Pick a drink!"/>
     </RelativeLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -115,18 +116,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_addCurrentDrink"
-            android:onClick="addCurrentDrink" />
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_addCurrentDrink"
+                android:onClick="addCurrentDrink"
+                android:layout_weight="3"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_remove"
+                android:onClick="removeLastDrink"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/drink_count_message"
             android:textSize="40dp"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/button_viewDrinks"
             android:onClick="viewDrinks" />

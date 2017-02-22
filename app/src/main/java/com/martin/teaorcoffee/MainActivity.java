@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         _drinkChoice = new DrinkChoice();
         _drinks = new ArrayList<DrinkChoice>();
+        DisplayDrinksCount();
     }
 
     public void setTea(View view) {
@@ -76,11 +77,15 @@ public class MainActivity extends AppCompatActivity {
     public void addCurrentDrink(View view){
         if(_drinkChoice.Type != null && _drinkChoice.Sugars != null && _drinkChoice.Milk != null) {
             _drinks.add(_drinkChoice);
-            TextView textView = (TextView) findViewById(R.id.drink_count_message);
-            textView.setText(_drinks.size() + " drinks");
+            DisplayDrinksCount();
             _drinkChoice = new DrinkChoice();
             DisplayCurrentDrink();
         }
+    }
+
+    private void DisplayDrinksCount() {
+        TextView textView = (TextView) findViewById(R.id.drink_count_message);
+        textView.setText(_drinks.size() + " drinks");
     }
 
     public void viewDrinks(View view){
@@ -88,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putParcelableArrayListExtra(EXTRA_DRINKS, _drinks);
         startActivity(intent);
 
+    }
+
+    public void removeLastDrink(View view){
+        _drinks.remove(_drinks.size() - 1);
+        DisplayDrinksCount();
     }
 
 //    @Override
