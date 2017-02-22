@@ -16,16 +16,18 @@
         android:orientation="horizontal">
         <Button
             android:id="@+id/button_tea"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_tea"
-            android:onClick="setTea" />
+            android:onClick="setTea"
+            android:layout_weight="1"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_coffee"
-            android:onClick="setCoffee" />
+            android:onClick="setCoffee"
+            android:layout_weight="1"/>
     </LinearLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -34,16 +36,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_milk"
-            android:onClick="setMilk" />
+            android:onClick="setMilk"
+            android:layout_weight="1"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_noMilk"
-            android:onClick="setNoMilk" />
+            android:onClick="setNoMilk"
+            android:layout_weight="1"/>
     </LinearLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -52,22 +56,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_noSugar"
-            android:onClick="setNoSugar" />
+            android:onClick="setNoSugar"
+            android:layout_weight="1"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_oneSugar"
-            android:onClick="setOneSugar" />
+            android:onClick="setOneSugar"
+            android:layout_weight="1"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/button_twoSugar"
-            android:onClick="setTwoSugar" />
+            android:onClick="setTwoSugar"
+            android:layout_weight="1"/>
     </LinearLayout>
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

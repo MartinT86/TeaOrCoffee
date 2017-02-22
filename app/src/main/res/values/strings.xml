@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TeaOrCoffee</string>
+    <string name="app_name">Tea Or Coffee?</string>
     <string name="action_settings">Settings</string>
     <string name="button_tea">Tea</string>
     <string name="button_coffee">Coffee</string>
