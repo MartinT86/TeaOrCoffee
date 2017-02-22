@@ -85,7 +85,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/current_drink_message" />
+            android:id="@+id/current_drink_message"
+            android:textSize="25dp"/>
     </RelativeLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -101,7 +102,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/drink_count_message" />
+            android:id="@+id/drink_count_message"
+            android:textSize="40dp"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
