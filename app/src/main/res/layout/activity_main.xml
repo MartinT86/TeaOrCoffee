@@ -108,7 +108,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/current_drink_message"
             android:textSize="25dp"
-            android:text="Pick a drink!"/>
+            android:text="Pick a drink!"
+            android:gravity="center"/>
     </RelativeLayout>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -140,7 +141,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/drink_count_message"
-            android:textSize="40dp"/>
+            android:textSize="40dp"
+            android:gravity="center"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -60,7 +60,7 @@ public class ViewDrinksActivity extends AppCompatActivity {
             linearLayout.setId(Integer.parseInt(rowIdString));
 
             TextView textView = new TextView(this);
-            textView.setTextSize(30);
+            textView.setTextSize(25);
             textView.setText(drinkChoice.Message());
             LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
             textView.setLayoutParams(textViewParams);

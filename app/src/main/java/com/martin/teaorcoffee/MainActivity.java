@@ -96,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void removeLastDrink(View view){
-        _drinks.remove(_drinks.size() - 1);
+        if(_drinks.size() > 0)
+            _drinks.remove(_drinks.size() - 1);
         DisplayDrinksCount();
     }
 
