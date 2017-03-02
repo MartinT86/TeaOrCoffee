@@ -58,6 +58,8 @@ public class ViewDrinksActivity extends AppCompatActivity {
             linearLayout.setLayoutParams(params);
             String rowIdString = _baseRowId + "" + _idInt;
             linearLayout.setId(Integer.parseInt(rowIdString));
+            linearLayout.setPadding(0,0,0,60);
+
 
             TextView textView = new TextView(this);
             textView.setTextSize(25);

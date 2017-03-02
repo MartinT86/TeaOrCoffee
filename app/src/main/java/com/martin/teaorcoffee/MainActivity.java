@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void DisplayDrinksCount() {
         TextView textView = (TextView) findViewById(R.id.drink_count_message);
-        textView.setText(_drinks.size() + " drinks");
+        String drink = _drinks.size() == 1 ? " drink" : " drinks";
+        textView.setText(_drinks.size() + drink);
     }
 
     public void viewDrinks(View view){
